@@ -5,6 +5,7 @@
     "location": "Mississauga, Ontario, Canada",
     "email": "vansh.bhatia9@gmail.com",
     "phone": "2509131376",
+    "image": "https://i.postimg.cc/WbL4h3mJ/Gunvansh.jpg",
     "summary": "Experienced Team Lead & Full-Stack Developer with a proven track record in the information technology and services industry. I bring a strong engineering foundation backed by a Master of Science in Computer Science from Concordia University, along with hands-on expertise in building and leading scalable, high-impact software solutions. I bring a comprehensive skill set, combining proficiency in various programming languages, frameworks, and tools. My experience is enriched by a solid foundation in methodologies such as Agile Software Development and a deep understanding of Object-Oriented Programming and Design Patterns. Let's connect to explore how I can drive innovation and deliver top-notch solutions for your team.",
     "links": ["www.linkedin.com/in/gunvansh-siingh"]
   },
@@ -174,7 +175,74 @@
       "bullets": []
     }
   ],
-  "projects": [],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Citi Global Portal",
+      "subtitle": "Enterprise-Scale Payment Platform",
+      "description": "Architected and led development of Citi's global public portals serving millions of users across multiple regions with 99.99% uptime.",
+      "image": "https://images.unsplash.com/photo-1639322537228-f710d846310f?w=1200&h=600&fit=crop",
+      "tags": ["React", "Spring Boot", "Kafka", "AWS"],
+      "impact": "Improved platform performance by 45%",
+      "category": "Enterprise",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "SpryWallet",
+      "subtitle": "Enterprise Payment Engine",
+      "description": "Built a native, enterprise-grade payment engine supporting millions of annual transactions across utility companies with advanced fraud detection.",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1bf2e89?w=1200&h=600&fit=crop",
+      "tags": ["Java", "Payment APIs", "Security", "Microservices"],
+      "impact": "30% increase in payment completion",
+      "category": "Fintech",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Notify-Me System",
+      "subtitle": "Real-Time Notification Platform",
+      "description": "Designed and deployed a sophisticated notification system achieving 95% user satisfaction and generating $1.5M in revenue.",
+      "image": "https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=1200&h=600&fit=crop",
+      "tags": ["React", "Node.js", "Real-time", "Analytics"],
+      "impact": "$1.5M revenue generated",
+      "category": "Product",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "title": "Article.com Redesign",
+      "subtitle": "E-Commerce Platform Optimization",
+      "description": "Led redesign initiative implementing React and modernizing stack, driving 20% surge in traffic and 90% performance improvement.",
+      "image": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200&h=600&fit=crop",
+      "tags": ["React", "AWS", "E-Commerce", "Performance"],
+      "impact": "20% traffic increase, 90% faster",
+      "category": "Web App",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "title": "UTOPIA Framework Optimization",
+      "subtitle": "Backend Performance Enhancement",
+      "description": "Optimized core framework architecture reducing API response time from 800ms to 120ms, achieving 75% improvement in system efficiency.",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
+      "tags": ["Java", "Optimization", "API", "Architecture"],
+      "impact": "75% performance improvement",
+      "category": "Infrastructure",
+      "link": "#"
+    },
+    {
+      "id": 6,
+      "title": "CMS Platform Suite",
+      "subtitle": "Content Management System",
+      "description": "Implemented comprehensive CMS platforms with DevOps best practices, CI/CD pipelines, and automated testing frameworks for enterprise content delivery.",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop",
+      "tags": ["Spring Boot", "Docker", "CI/CD", "Automation"],
+      "impact": "50% reduction in deployment time",
+      "category": "Enterprise",
+      "link": "#"
+    }
+  ],
   "achievements": [],
   "awards": [],
   "extra": [

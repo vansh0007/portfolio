@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import AnimatedBackground from "./components/AnimatedBackground";
+import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
+import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Contact from "./components/Contact";
 import resumeData from "./data/resume.json";
 
 export default function App() {
@@ -20,6 +23,7 @@ export default function App() {
   return (
     <div className="min-h-screen text-white font-sans selection:bg-indigo-500/30">
       <AnimatedBackground />
+      <Navigation />
 
       <AnimatePresence>
         {showSplash && (
@@ -56,12 +60,31 @@ export default function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-10 container mx-auto px-6 py-24 max-w-5xl space-y-32"
+          className="relative z-10 container mx-auto px-6 py-24 max-w-5xl space-y-32 pt-32"
         >
-          <Hero data={resumeData.basics} />
-          <Experience data={resumeData.experience} />
-          <Skills data={resumeData.skills} />
-          <Education data={resumeData.education} />
+          <section id="home">
+            <Hero data={resumeData.basics} />
+          </section>
+          
+          <section id="projects">
+            <Projects data={resumeData.projects} />
+          </section>
+          
+          <section id="experience">
+            <Experience data={resumeData.experience} />
+          </section>
+          
+          <section id="skills">
+            <Skills data={resumeData.skills} />
+          </section>
+          
+          <section id="education">
+            <Education data={resumeData.education} />
+          </section>
+          
+          <section id="contact">
+            <Contact data={resumeData.basics} />
+          </section>
 
           <footer className="pt-20 pb-10 text-center text-white/40 text-sm">
             <p>

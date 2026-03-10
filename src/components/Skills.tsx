@@ -1,62 +1,389 @@
 import { motion } from "motion/react";
-import { Code2, Database, Layout, Wrench, GitBranch } from "lucide-react";
+import {
+  Code2,
+  Database,
+  Layout,
+  Wrench,
+  GitBranch,
+  Zap,
+  Star,
+} from "lucide-react";
+import { useState } from "react";
 
 export default function Skills({ data }: { data: any }) {
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+
+  // Define proficiency levels with aligned website colors
+  const proficiencyLevels: {
+    [key: string]: { level: string; color: string };
+  } = {
+    Expert: {
+      level: "Expert",
+      color: "from-indigo-500 to-purple-500",
+    },
+    Advanced: {
+      level: "Advanced",
+      color: "from-cyan-500 to-blue-500",
+    },
+    Proficient: {
+      level: "Proficient",
+      color: "from-purple-500/80 to-indigo-500/80",
+    },
+  };
+
+  // Determine proficiency level for each skill
+  const getSkillProficiency = (item: string): string => {
+    const expertSkills = [
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Spring Boot",
+      "Spring Framework",
+      "Node",
+    ];
+    const advancedSkills = [
+      "AWS",
+      "Docker",
+      "GraphQL",
+      "Kafka",
+      "Apache Spark",
+      "Angular",
+    ];
+
+    if (expertSkills.includes(item)) return "Expert";
+    if (advancedSkills.includes(item)) return "Advanced";
+    return "Proficient";
+  };
+
   const categories = [
-    { title: "Programming", icon: Code2, items: data.programming },
-    { title: "Technologies", icon: Layout, items: data.technologies },
-    { title: "Storage & DB", icon: Database, items: data.storage },
-    { title: "Web", icon: Layout, items: data.web },
-    { title: "Tools", icon: Wrench, items: data.tools },
-    { title: "Methodologies", icon: GitBranch, items: data.methodologies },
+    {
+      title: "Programming Languages",
+      icon: Code2,
+      items: data.programming,
+      id: "programming",
+      gradient: "from-indigo-500/20 to-purple-500/20",
+      iconColor: "text-indigo-400",
+    },
+    {
+      title: "Web & Frontend",
+      icon: Layout,
+      items: data.web,
+      id: "web",
+      gradient: "from-cyan-500/20 to-blue-500/20",
+      iconColor: "text-cyan-400",
+    },
+    {
+      title: "Frameworks & Libraries",
+      icon: Zap,
+      items: data.technologies,
+      id: "technologies",
+      gradient: "from-pink-500/20 to-rose-500/20",
+      iconColor: "text-pink-400",
+    },
+    {
+      title: "Databases & Storage",
+      icon: Database,
+      items: data.storage,
+      id: "storage",
+      gradient: "from-emerald-500/20 to-green-500/20",
+      iconColor: "text-emerald-400",
+    },
+    {
+      title: "DevOps & Tools",
+      icon: Wrench,
+      items: data.tools,
+      id: "tools",
+      gradient: "from-orange-500/20 to-amber-500/20",
+      iconColor: "text-orange-400",
+    },
+    {
+      title: "Methodologies",
+      icon: GitBranch,
+      items: data.methodologies,
+      id: "methodologies",
+      gradient: "from-violet-500/20 to-purple-500/20",
+      iconColor: "text-violet-400",
+    },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const skillVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section className="space-y-16">
+    <section className="relative space-y-20">
+      {/* Background Elements */}
+      <motion.div
+        className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-3xl -z-10"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      <motion.div
+        className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-gradient-to-br from-cyan-500/10 to-blue-500/10 blur-3xl -z-10"
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
+
+      {/* Header Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="space-y-4"
+        transition={{ duration: 0.8 }}
+        className="space-y-6 text-center"
       >
-        <h2 className="text-3xl font-bold tracking-tight text-white">
-          Skills & Expertise
-        </h2>
-        <div className="w-12 h-1 bg-indigo-500 rounded-full" />
+        <motion.div
+          className="inline-block"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-sm font-semibold text-indigo-400 uppercase tracking-widest">
+            Expertise
+          </span>
+        </motion.div>
+
+        <motion.h2
+          className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/40">
+            Skills & Proficiencies
+          </span>
+        </motion.h2>
+
+        <motion.p
+          className="max-w-3xl mx-auto text-lg text-white/50 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Comprehensive technical expertise with 10+ years of hands-on experience
+          across enterprise-scale systems, cloud infrastructure, and modern
+          development practices.
+        </motion.p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map((category, index) => (
+      {/* Skills Grid */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {categories.map((category) => {
+          const Icon = category.icon;
+          return (
+            <motion.div
+              key={category.id}
+              variants={skillVariants}
+              onMouseEnter={() => setHoveredCategory(category.id)}
+              onMouseLeave={() => setHoveredCategory(null)}
+              className="group relative"
+            >
+              {/* Card Background with Gradient Border */}
+              <motion.div
+                className="absolute inset-0 rounded-3xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                animate={{
+                  bgGradient:
+                    hoveredCategory === category.id
+                      ? `linear-gradient(135deg, ${category.gradient})`
+                      : "transparent",
+                }}
+              />
+
+              {/* Main Card */}
+              <motion.div
+                className="relative h-full p-8 rounded-3xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-xl transition-all duration-300"
+                whileHover={{
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                  y: -5,
+                }}
+              >
+                {/* Header with Icon */}
+                <div className="flex items-start justify-between mb-8">
+                  <motion.div
+                    className={`p-4 rounded-2xl bg-gradient-to-br ${category.gradient} border border-white/10`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <Icon className={`w-6 h-6 ${category.iconColor}`} />
+                  </motion.div>
+
+                  <motion.div
+                    animate={{
+                      opacity:
+                        hoveredCategory === category.id ? 1 : 0,
+                      scale: hoveredCategory === category.id ? 1 : 0.8,
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  </motion.div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-6 leading-tight">
+                  {category.title}
+                </h3>
+
+                {/* Skills Grid */}
+                <motion.div
+                  className="space-y-3"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {category.items.map((item: string, idx: number) => {
+                    const proficiencyLevel = getSkillProficiency(item);
+                    const proficiency = proficiencyLevels[proficiencyLevel];
+
+                    return (
+                      <motion.div
+                        key={idx}
+                        variants={skillVariants}
+                        onClick={() =>
+                          setSelectedSkill(
+                            selectedSkill === item ? null : item
+                          )
+                        }
+                        className="group/skill cursor-pointer"
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-white/80 font-medium text-sm group-hover/skill:text-white transition-colors">
+                            {item}
+                          </span>
+                          <motion.span
+                            className={`text-xs font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r ${proficiency.color} text-white`}
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {proficiency.level}
+                          </motion.span>
+                        </div>
+
+                        {/* Proficiency Bar */}
+                        <motion.div
+                          className="h-1.5 rounded-full bg-white/10 overflow-hidden"
+                          whileHover={{ height: 8 }}
+                        >
+                          <motion.div
+                            className={`h-full rounded-full bg-gradient-to-r ${proficiency.color}`}
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "100%" }}
+                            transition={{
+                              duration: 1.5,
+                              delay: idx * 0.05,
+                              ease: "easeOut",
+                            }}
+                            viewport={{ once: true }}
+                          />
+                        </motion.div>
+                      </motion.div>
+                    );
+                  })}
+                </motion.div>
+
+                {/* Count Badge */}
+                <motion.div
+                  className="mt-8 pt-6 border-t border-white/5"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-white/50 uppercase tracking-widest">
+                      Skills
+                    </span>
+                    <motion.span
+                      className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400"
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      {category.items.length}
+                    </motion.span>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+
+      {/* Bottom Stats Section */}
+      <motion.div
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        {[
+          { label: "Years Experience", value: "10+" },
+          { label: "Technologies", value: `${data.technologies.length}+` },
+          { label: "Languages", value: `${data.programming.length}` },
+          { label: "Proficient Areas", value: "6" },
+        ].map((stat, idx) => (
           <motion.div
-            key={index}
+            key={idx}
+            className="p-6 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 text-center"
+            whileHover={{ y: -5, borderColor: "rgba(255,255,255,0.2)" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all duration-300 backdrop-blur-sm group"
+            transition={{ duration: 0.6, delay: idx * 0.1 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500/20 transition-colors">
-                <category.icon className="w-5 h-5" />
-              </div>
-              <h3 className="text-lg font-semibold text-white/90">
-                {category.title}
-              </h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {category.items.map((item: string, i: number) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 text-xs font-medium text-white/60 bg-white/5 rounded-full border border-white/5 hover:bg-white/10 hover:text-white transition-colors cursor-default"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
+            <motion.div
+              className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 mb-2"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, delay: idx * 0.2, repeat: Infinity }}
+            >
+              {stat.value}
+            </motion.div>
+            <p className="text-xs text-white/50 uppercase tracking-widest">
+              {stat.label}
+            </p>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

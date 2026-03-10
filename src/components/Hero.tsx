@@ -7,10 +7,12 @@ import {
   Phone,
   ExternalLink,
 } from "lucide-react";
+import ProfileImage from "./ProfileImage";
 
 export default function Hero({ data }: { data: any }) {
   return (
-    <section className="flex flex-col items-start justify-center min-h-[80vh] gap-8">
+    <section className="flex flex-col lg:flex-row items-center lg:items-start justify-between min-h-[80vh] gap-12 lg:gap-16">
+      <div className="flex-1 space-y-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -88,6 +90,12 @@ export default function Hero({ data }: { data: any }) {
           Download Resume
         </button>
       </motion.div>
+      </div>
+
+      {/* Profile Image Section */}
+      {data.image && (
+        <ProfileImage src={data.image} alt={data.name} />
+      )}
     </section>
   );
 }
