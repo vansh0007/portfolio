@@ -1,0 +1,183 @@
+{
+  "basics": {
+    "name": "Gunvansh Siingh",
+    "title": "Vice President at Citi",
+    "location": "Mississauga, Ontario, Canada",
+    "email": "vansh.bhatia9@gmail.com",
+    "phone": "2509131376",
+    "summary": "Experienced Team Lead & Full-Stack Developer with a proven track record in the information technology and services industry. I bring a strong engineering foundation backed by a Master of Science in Computer Science from Concordia University, along with hands-on expertise in building and leading scalable, high-impact software solutions. I bring a comprehensive skill set, combining proficiency in various programming languages, frameworks, and tools. My experience is enriched by a solid foundation in methodologies such as Agile Software Development and a deep understanding of Object-Oriented Programming and Design Patterns. Let's connect to explore how I can drive innovation and deliver top-notch solutions for your team.",
+    "links": ["www.linkedin.com/in/gunvansh-siingh"]
+  },
+  "skills": {
+    "programming": [
+      "Java",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "R",
+      "Node",
+      "GO"
+    ],
+    "technologies": [
+      "Spring Framework",
+      "Angular",
+      "React",
+      "Vue",
+      "Node",
+      "Spring MVC",
+      "Spring Security",
+      "Spring",
+      "GraphQL",
+      "Kafka",
+      "Boot",
+      "Apache Spark",
+      "Hadoop",
+      "Hibernate",
+      "JPA",
+      "Docker",
+      "Android"
+    ],
+    "storage": ["Big Data", "MySQL", "S3"],
+    "web": ["HTML5", "CSS", "RESTful API Web-services", "Bootstrap"],
+    "tools": [
+      "GIT",
+      "Android Studio",
+      "Eclipse",
+      "Netbeans",
+      "Pycharm",
+      "IntelliJ",
+      "R Studio",
+      "Maven",
+      "Aws Lambda"
+    ],
+    "methodologies": [
+      "Agile Software Development",
+      "Object-Oriented Programming(OOPS)",
+      "Design Patterns"
+    ]
+  },
+  "languages": [
+    "Punjabi (Limited Working)",
+    "English (Professional Working)",
+    "Hindi (Full Professional)"
+  ],
+  "certifications": ["Android", "Java"],
+  "experience": [
+    {
+      "company": "Citi",
+      "role": "Vice President",
+      "dates": "May 2025 - Present (11 months)",
+      "location": "Mississauga, Ontario, Canada",
+      "bullets": [
+        "Led end-to-end management of Citi’s global public portals, overseeing architecture, development, stability, and compliance across multiple regions.",
+        "Architected and delivered scalable solutions using React and Java Spring Boot , integrating Kafka, Elasticsearch, Docker, CI/CD pipelines, and AWS S3 to ensure high availability and performance.",
+        "Directed and mentored distributed teams across 4 countries, driving agile delivery, improving collaboration, and ensuring 24/7 production support for global platforms.",
+        "Led security governance including VA testing, compliance audits, and vulnerability remediation across all public-facing portals, ensuring adherence to enterprise and regulatory standards",
+        "Managed and enhanced in-house CMS platforms while implementing DevOps best practices, automated testing frameworks, and CI/CD pipelines to accelerate releases and improve deployment reliability.",
+        "Built SEO-optimized and server-side rendered features using Next.js and React, improving performance and page load speed."
+      ]
+    },
+    {
+      "company": "SpryPoint",
+      "role": "Senior Software Engineer",
+      "dates": "October 2024 - May 2025 (8 months)",
+      "location": "Toronto, Ontario, Canada",
+      "bullets": [
+        "Led development of SpryWallet, a native, enterprise-grade payment engine embedded within SpryCIS and SpryEngage, supporting millions of utility payments annually across multiple U.S. states.",
+        "Architected end-to-end meter-to-cash payment workflows, enabling one-time, recurring, and autopay transactions across online and in-person channels, increasing payment completion rates by 30%+.",
+        "Built and scaled high-availability payment services, integrating Worldpay for Platforms, Paymentus, Moneris, Cybersource, Chase, Apple Pay, and SpryWallet, reliably handling high-volume peak billing traffic.",
+        "Implemented risk-based fraud detection, transaction caps, and flexible fee models, helping utilities reduce chargebacks and payment cost leakage by 25%+.",
+        "Collaborated with utility partners serving hundreds of thousands of customer accounts, ensuring PCI-aware design, regulatory compliance, and financial-grade reliability."
+      ]
+    },
+    {
+      "company": "Article",
+      "role": "Senior Software Engineer",
+      "dates": "September 2020 - September 2024 (4 years 1 month)",
+      "location": "",
+      "bullets": [
+        "Led development initiatives at Article.com, driving a 20% surge in website traffic.",
+        "Integrated React and Play Framework with Java (Spring) on AWS, enhancing scalability by 37% and boosting app performance by 90%.",
+        "Slashed backend query response times by 15%, elevating user experience by 73%.",
+        "Mentored junior developers, fostering skill growth and teamwork.",
+        "Orchestrated SEO campaigns, elevating organic search traffic by 25% and generating $0.8M in sales.",
+        "Conducted technical interviews, ensuring top-tier talent acquisition.",
+        "Oversaw Notify-Me project from conception to launch, achieving 95% user satisfaction and $1.5M in sales.",
+        "Collaborated cross-functionally with product managers, UI/UX designers, and QA engineers to align development efforts with project goals and business objectives.",
+        "Coordinated with cross-functional teams for seamless project alignment and delivery."
+      ]
+    },
+    {
+      "company": "Tecsys Inc.",
+      "role": "Senior Software Engineer",
+      "dates": "January 2020 - September 2020 (9 months)",
+      "location": "Montreal, Quebec, Canada",
+      "bullets": [
+        "Optimized the Tecsys framework UTOPIA, achieving a 660ms reduction in API response time (from 800ms to 120ms), resulting in a 75% improvement.",
+        "Led a cross-functional team of 2 designers, 3 back-end developers, and 3 front-end developers to deliver 2 complex features on time and 10% under budget.",
+        "Designed back-end logic and UI leveraging OOP and best practices, achieving a 25% reduction in code complexity.",
+        "Integrated BDD for full-stack testing, attaining 80% coverage and streamlining development through improved testability.",
+        "Acted as a primary point of contact for client engagements, understanding their requirements, providing technical guidance, and ensuring customer satisfaction."
+      ]
+    },
+    {
+      "company": "Graduate Students' Association, Concordia University",
+      "role": "Vice President External",
+      "dates": "June 2019 - August 2020 (1 year 3 months)",
+      "location": "Montreal, Canada Area",
+      "bullets": [
+        "Representing over 10000 graduate students.",
+        "Monitoring the activities of Concordia University, other universities, associations, provincial student and non-student organizations by regularly representing GSA in their meetings.",
+        "Finding new opportunities and building on existing relationships, with student unions and organizations.",
+        "Dealing with sponsors for GSA events, and health Insurance programs and also working with the Student Life Program."
+      ]
+    },
+    {
+      "company": "SERAPHIC INFOSOLUTIONS PVT. LTD.",
+      "role": "Full Stack Engineer",
+      "dates": "May 2015 - June 2018 (3 years 2 months)",
+      "location": "Chandigarh Area, India",
+      "bullets": [
+        "Streamlined development processes by leveraging Spring MVC and Hibernate JPA frameworks, resulting in a 30% increase in development efficiency.",
+        "Led the end-to-end design, development, and implementation of high-impact business applications using Java/J2EE, contributing to a 25% reduction in time-to-market.",
+        "Drove optimization efforts, troubleshooting, and maintenance of application code, achieving a 40% improvement in system reliability and performance.",
+        "Seamlessly deployed applications into staging and production environments, reducing deployment time by 50%.",
+        "Automated deployment processes by generating and deploying WAR and EAR files using Maven and Tomcat Application Server, saving 20 hours of manual effort per release cycle.",
+        "Ensured robust code quality with comprehensive test coverage, leveraging JUnit to achieve a 95% code coverage rate.",
+        "Engineered highly intuitive GUIs using Spring Framework, JSPs, HTML, JavaScript, and CSS, enhancing user satisfaction by 50%.",
+        "Tailored and integrated software systems to meet exact end-user specifications, resulting in a 30% increase in user engagement and satisfaction.",
+        "Expertly navigated a diverse technology stack including Java, Hibernate, Spring MVC, Spring AOP, Spring Boot, MySQL, Struts, and Git, ensuring seamless integration and functionality across platforms.",
+        "Collaborated closely with cross-functional teams within a dynamic Agile environment, facilitating effective communication and alignment of development efforts with project objectives."
+      ]
+    },
+    {
+      "company": "Netmax technologies pvt ltd",
+      "role": "Android training",
+      "dates": "June 2013 - August 2013 (3 months)",
+      "location": "Chandigarh Area, India",
+      "bullets": ["Certified Android application development training."]
+    }
+  ],
+  "education": [
+    {
+      "company": "Concordia University",
+      "role": "Master's degree, Computer Science",
+      "dates": "",
+      "location": "",
+      "bullets": []
+    },
+    {
+      "company": "UIET - Kurukshetra University",
+      "role": "Bachelor of Engineering (BEng), Computer Science and Engineering",
+      "dates": "",
+      "location": "",
+      "bullets": []
+    }
+  ],
+  "projects": [],
+  "achievements": [],
+  "awards": [],
+  "extra": [
+    "Top Skills: Payment Card Industry Data Security Standard (PCI DSS), Payment Gateways, Mobile Payments"
+  ]
+}
