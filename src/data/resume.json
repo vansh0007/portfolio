@@ -6,7 +6,7 @@
     "email": "vansh.bhatia9@gmail.com",
     "phone": "2509131376",
     "image": "https://i.postimg.cc/WbL4h3mJ/Gunvansh.jpg",
-    "summary": "Experienced Team Lead & Full-Stack Developer with a proven track record in the information technology and services industry. I bring a strong engineering foundation backed by a Master of Science in Computer Science from Concordia University, along with hands-on expertise in building and leading scalable, high-impact software solutions. I bring a comprehensive skill set, combining proficiency in various programming languages, frameworks, and tools. My experience is enriched by a solid foundation in methodologies such as Agile Software Development and a deep understanding of Object-Oriented Programming and Design Patterns. Let's connect to explore how I can drive innovation and deliver top-notch solutions for your team.",
+    "summary": "VP & Full-Stack Engineer obsessed with building scalable systems that don't crash at 2 AM 🚀 I architect enterprise solutions at Citi that serve millions, turn complex payment problems into elegant code, and somehow mentor teams across 4 countries while maintaining my sanity. Armed with an MSc in Computer Science & 10+ years of battle-tested experience, I speak fluent Java, React, and Agile—and I'm pretty good at explaining why your legacy code probably needs a makeover. Let's build something extraordinary together.",
     "links": ["www.linkedin.com/in/gunvansh-siingh"]
   },
   "skills": {
@@ -66,6 +66,7 @@
   "experience": [
     {
       "company": "Citi",
+      "logo": "https://logo.clearbit.com/citigroup.com",
       "role": "Vice President",
       "dates": "May 2025 - Present (11 months)",
       "location": "Mississauga, Ontario, Canada",
@@ -80,6 +81,7 @@
     },
     {
       "company": "SpryPoint",
+      "logo": "https://logo.clearbit.com/sprypoint.com",
       "role": "Senior Software Engineer",
       "dates": "October 2024 - May 2025 (8 months)",
       "location": "Toronto, Ontario, Canada",
@@ -93,6 +95,7 @@
     },
     {
       "company": "Article",
+      "logo": "https://logo.clearbit.com/article.com",
       "role": "Senior Software Engineer",
       "dates": "September 2020 - September 2024 (4 years 1 month)",
       "location": "",
@@ -110,6 +113,7 @@
     },
     {
       "company": "Tecsys Inc.",
+      "logo": "https://logo.clearbit.com/tecsys.com",
       "role": "Senior Software Engineer",
       "dates": "January 2020 - September 2020 (9 months)",
       "location": "Montreal, Quebec, Canada",
@@ -123,6 +127,7 @@
     },
     {
       "company": "Graduate Students' Association, Concordia University",
+      "logo": "https://logo.clearbit.com/concordia.ca",
       "role": "Vice President External",
       "dates": "June 2019 - August 2020 (1 year 3 months)",
       "location": "Montreal, Canada Area",
@@ -135,6 +140,7 @@
     },
     {
       "company": "SERAPHIC INFOSOLUTIONS PVT. LTD.",
+      "logo": "https://images.unsplash.com/photo-1516534775068-bb57e5a4a8bf?w=200&h=200&fit=crop",
       "role": "Full Stack Engineer",
       "dates": "May 2015 - June 2018 (3 years 2 months)",
       "location": "Chandigarh Area, India",
@@ -153,6 +159,7 @@
     },
     {
       "company": "Netmax technologies pvt ltd",
+      "logo": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200&h=200&fit=crop",
       "role": "Android training",
       "dates": "June 2013 - August 2013 (3 months)",
       "location": "Chandigarh Area, India",
@@ -181,7 +188,7 @@
       "title": "Citi Global Portal",
       "subtitle": "Enterprise-Scale Payment Platform",
       "description": "Architected and led development of Citi's global public portals serving millions of users across multiple regions with 99.99% uptime.",
-      "image": "https://images.unsplash.com/photo-1639322537228-f710d846310f?w=1200&h=600&fit=crop",
+      "image": "https://cdn-res.keymedia.com/cdn-cgi/image/w=1374,h=824,f=auto/https://cdn-res.keymedia.com/cms/images/in/deni_638911123146673503.jpg",
       "tags": ["React", "Spring Boot", "Kafka", "AWS"],
       "impact": "Improved platform performance by 45%",
       "category": "Enterprise",
@@ -192,7 +199,7 @@
       "title": "SpryWallet",
       "subtitle": "Enterprise Payment Engine",
       "description": "Built a native, enterprise-grade payment engine supporting millions of annual transactions across utility companies with advanced fraud detection.",
-      "image": "https://images.unsplash.com/photo-1563013544-824ae1bf2e89?w=1200&h=600&fit=crop",
+      "image": "https://i0.wp.com/www.sprypoint.com/wp-content/uploads/2025/04/utility-water-sewer-hero.png?w=725&ssl=1",
       "tags": ["Java", "Payment APIs", "Security", "Microservices"],
       "impact": "30% increase in payment completion",
       "category": "Fintech",
@@ -203,7 +210,7 @@
       "title": "Notify-Me System",
       "subtitle": "Real-Time Notification Platform",
       "description": "Designed and deployed a sophisticated notification system achieving 95% user satisfaction and generating $1.5M in revenue.",
-      "image": "https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=1200&h=600&fit=crop",
+      "image": "https://westernliving.ca/wp-content/uploads/article-storefront-1282x727.jpg",
       "tags": ["React", "Node.js", "Real-time", "Analytics"],
       "impact": "$1.5M revenue generated",
       "category": "Product",
@@ -214,7 +221,7 @@
       "title": "Article.com Redesign",
       "subtitle": "E-Commerce Platform Optimization",
       "description": "Led redesign initiative implementing React and modernizing stack, driving 20% surge in traffic and 90% performance improvement.",
-      "image": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200&h=600&fit=crop",
+      "image": "https://cdn-images.article.com/productbundles/294/HERO_DESKTOP/productbundle294-1713326074751.jpg?w=2600&q=60&fm=webp&fit=max",
       "tags": ["React", "AWS", "E-Commerce", "Performance"],
       "impact": "20% traffic increase, 90% faster",
       "category": "Web App",
@@ -225,7 +232,7 @@
       "title": "UTOPIA Framework Optimization",
       "subtitle": "Backend Performance Enhancement",
       "description": "Optimized core framework architecture reducing API response time from 800ms to 120ms, achieving 75% improvement in system efficiency.",
-      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
+      "image": "https://www.cantechletter.com/wp-content/uploads/Tecsys.jpg",
       "tags": ["Java", "Optimization", "API", "Architecture"],
       "impact": "75% performance improvement",
       "category": "Infrastructure",
@@ -236,7 +243,7 @@
       "title": "CMS Platform Suite",
       "subtitle": "Content Management System",
       "description": "Implemented comprehensive CMS platforms with DevOps best practices, CI/CD pipelines, and automated testing frameworks for enterprise content delivery.",
-      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop",
+      "image": "https://spin.atomicobject.com/wp-content/uploads/contentful-logo.jpg",
       "tags": ["Spring Boot", "Docker", "CI/CD", "Automation"],
       "impact": "50% reduction in deployment time",
       "category": "Enterprise",

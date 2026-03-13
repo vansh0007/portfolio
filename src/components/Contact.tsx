@@ -103,7 +103,7 @@ export default function Contact({ data }: { data: any }) {
     {
       icon: Github,
       label: "GitHub",
-      href: "#",
+      href: "https://github.com/vansh0007",
       color: "text-white/50",
     },
     {
