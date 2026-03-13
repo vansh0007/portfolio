@@ -10,6 +10,7 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { label: "Home", href: "#home", id: "home" },
+  { label: "Tech Stack", href: "#tech-stack", id: "tech-stack" },
   { label: "Projects", href: "#projects", id: "projects" },
   { label: "Experience", href: "#experience", id: "experience" },
   { label: "Skills", href: "#skills", id: "skills" },
@@ -21,31 +22,49 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Detect which section is currently in view
+  // Detect which section is currently in view with throttling for smoother performance
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    let ticking = false;
+    let lastY = 0;
 
-      // Find the current section in viewport
-      for (const link of navLinks) {
-        const element = document.getElementById(link.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // Check if section is in viewport (with 100px offset from top)
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSection(link.id);
-            break;
+    const handleScroll = () => {
+      lastY = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(lastY > 50);
+
+          // Calculate scroll progress
+          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrolled = (lastY / scrollHeight) * 100;
+          setScrollProgress(scrolled);
+
+          // Find the current section in viewport
+          for (const link of navLinks) {
+            const element = document.getElementById(link.id);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              // Check if section is in viewport (with 120px offset from top)
+              if (rect.top <= 150 && rect.bottom >= 150) {
+                setActiveSection(link.id);
+                break;
+              }
+            }
           }
-        }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll to section with offset for fixed nav
+  // Ultra-smooth scroll to section with offset for fixed nav
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setActiveSection(id);
@@ -53,10 +72,11 @@ export default function Navigation() {
 
     const element = document.getElementById(id);
     if (element) {
-      const offsetTop = element.offsetTop - 100; // Account for fixed nav height
+      const offsetTop = element.offsetTop - 120; // Account for fixed nav height + padding
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
+        // Browser will use CSS scroll-behavior: smooth for optimal animation
       });
     }
   };
@@ -218,6 +238,13 @@ export default function Navigation() {
           )}
         </AnimatePresence>
       </motion.div>
+
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 transform-gpu z-50"
+        style={{ width: `${scrollProgress}%` }}
+        transition={{ type: "spring", stiffness: 100, damping: 30 }}
+      />
     </>
   );
 }

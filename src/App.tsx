@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import AnimatedBackground from "./components/AnimatedBackground";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
+import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
@@ -64,6 +65,10 @@ export default function App() {
         >
           <section id="home">
             <Hero data={resumeData.basics} />
+          </section>
+          
+          <section id="tech-stack">
+            <TechStack />
           </section>
           
           <section id="projects">
