@@ -22,11 +22,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Clear npm cache
-        run: npm cache clean --force
-
-      - name: Install dependencies
-        run: npm install
+      - name: Clean cache and reinstall
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install --legacy-peer-deps --verbose
 
       - name: Run linter
         run: npm run lint --if-present
