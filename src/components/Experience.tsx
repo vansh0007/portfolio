@@ -32,7 +32,7 @@ export default function Experience({ data }: { data: any[] }) {
 
       <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
         {data.map((job, index) => (
-          <ExperienceCard key={index} job={job} index={index} />
+          <ExperienceCard key={job.company} job={job} index={index} />
         ))}
       </div>
     </section>

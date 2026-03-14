@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
+import React from "react";
 import {
-  Code2,
   Database,
   Layout,
   Wrench,
