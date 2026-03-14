@@ -39,8 +39,7 @@ export default function Experience({ data }: { data: any[] }) {
   );
 }
 
-function ExperienceCard(props: { job: any; index: number }) {
-  const { job, index } = props;
+const ExperienceCard: React.FC<{ job: any; index: number }> = ({ job, index }) => {
   const [isExpanded, setIsExpanded] = useState(index === 0);
 
   return (
