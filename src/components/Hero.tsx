@@ -122,14 +122,17 @@ export default function Hero({ data }: { data: any }) {
             View Experience
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </motion.button>
-          <motion.button
+          <motion.a
+            href="https://docs.google.com/document/d/1m456P9bXVsjJ3ZJ-UnnWB_KNER9I1b4L/edit?usp=sharing&ouid=114933490970030146059&rtpof=true&sd=true"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white/70 hover:text-white bg-transparent hover:bg-white/5 rounded-xl transition-all group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Download className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
             Download Resume
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
 
