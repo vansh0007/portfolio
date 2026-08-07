@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import React from "react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -44,7 +45,12 @@ export default function Contact({ data }: { data: any }) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [hoveredField, setHoveredField] = useState<string | null>(null);
+
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -59,18 +65,52 @@ export default function Contact({ data }: { data: any }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
+    // If EmailJS is configured, send via EmailJS. Otherwise fall back to simulated success.
+    if (SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY) {
+      try {
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          // Ensure a recipient email is provided for the EmailJS template/service
+          to_email: "vansh.bhatia9@gmail.com",
+          // Helpful additional fields for common EmailJS templates
+          to_name: "Gunvansh Siingh",
+          reply_to: "vansh.bhatia9@gmail.com",
+        };
 
-      // Reset success message after 5 seconds
+        await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setIsSubmitting(false);
+
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } catch (err: any) {
+        console.error("Email send failed:", err);
+        setSubmitError("Failed to send message. Please try again later.");
+        setIsSubmitting(false);
+      }
+    } else {
+      console.warn("EmailJS not configured. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY to enable real sending.");
+
+      // Simulate submission for local dev when EmailJS keys are missing
       setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      }, 800);
+    }
   };
 
   const contactMethods = [
@@ -280,6 +320,17 @@ export default function Contact({ data }: { data: any }) {
                 </motion.div>
               )}
             </AnimatePresence>
+
+            {submitError && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 rounded-xl bg-gradient-to-r from-red-500/10 to-rose-500/10 border border-red-500/30 flex items-center gap-3"
+              >
+                <svg className="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 9v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 17h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <span className="text-red-300">{submitError}</span>
+              </motion.div>
+            )}
 
             {/* Form Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

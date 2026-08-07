@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Thanks — we received your message</title>
+  </head>
+  <body style="margin:0;padding:0;background-color:#0b1220;color:#e6eef8;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+    <!-- Use table layout and inline styles for best email client compatibility -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#0b1220;width:100%;">
+      <tr>
+        <td align="center" style="padding:24px 12px;">
+          <table role="presentation" width="680" cellspacing="0" cellpadding="0" style="max-width:680px;width:100%;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03);">
+            <tr>
+              <td style="padding:28px;">
+                <h1 style="margin:0 0 8px 0;font-size:22px;color:#ffffff;">Thanks, {{from_name}} — I got your message</h1>
+                <p style="margin:0 0 12px 0;line-height:1.45;color:#c9d7ee;">This is an automated confirmation to let you know I received your message. I typically reply within 24–48 hours.</p>
+
+                <p style="margin:12px 0 6px 0;color:#c9d7ee;">Summary:</p>
+
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:8px 0 12px 0;background-color:rgba(255,255,255,0.02);border-left:4px solid #6366f1;border-radius:8px;padding:12px;color:#eaf0ff;">
+                  <tr>
+                    <td style="color:#eaf0ff;font-size:14px;line-height:1.5;">
+                      <strong style="display:block;color:#ffffff;margin-bottom:6px;">Subject: <span style="font-weight:600;color:#dbe9ff;">{{subject}}</span></strong>
+                      <div style="margin-bottom:8px;color:#dbe9ff;">From: {{from_name}} &lt;{{from_email}}&gt;</div>
+                      <div style="border-top:1px solid rgba(255,255,255,0.04);margin:8px 0;padding-top:8px;white-space:pre-wrap;color:#eaf0ff;">{{message}}</div>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin:0 0 12px 0;color:#c9d7ee;">If you included attachments or important links, I'll review them when I reply. If this was urgent, please reply to this email and add <strong>URGENT</strong> in the subject line.</p>
+
+                <!-- Button as table cell (widely supported) -->
+                <table role="presentation" cellspacing="0" cellpadding="0" style="margin-top:12px;">
+                  <tr>
+                    <td align="left">
+                      <a href="mailto:{{from_email}}?subject=Re:%20{{subject}}" style="display:inline-block;padding:10px 14px;background:#6366f1;color:#ffffff;border-radius:8px;text-decoration:none;font-weight:600;">Reply to sender</a>
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="margin-top:18px;color:#9fb0d9;font-size:13px;">
+                  <p style="margin:0 0 8px 0;color:#dbe9ff;">Cheers,<br/>Gunvansh Siingh <br/>+1-250-913-1376</p>
+                  <p style="margin:0;color:#9fb0d9;">Visit: <a href="https://vansh0007.github.io/portfolio/" style="color:#60a5fa;">your-site.example</a> • Follow: <a href="https://www.linkedin.com/in/gunvansh-siingh/" style="color:#60a5fa;">LinkedIn</a></p>
+                </div>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

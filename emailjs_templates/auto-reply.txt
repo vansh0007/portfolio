@@ -1,0 +1,12 @@
+Thanks, {{from_name}} — I received your message.
+
+Subject: {{subject}}
+From: {{from_name}} <{{from_email}}>
+
+Message:
+{{message}}
+
+I typically reply within 24–48 hours. If this is urgent, reply to this email and add "URGENT" to the subject.
+
+— Your Name
+https://your-site.example

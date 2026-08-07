@@ -11,6 +11,10 @@ import {
 import ProfileImage from "./ProfileImage";
 
 export default function Hero({ data }: { data: any }) {
+  const scrollToExperience = () => {
+    const el = document.getElementById("experience");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -118,6 +122,7 @@ export default function Hero({ data }: { data: any }) {
             className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white bg-white/10 hover:bg-indigo-500/20 rounded-xl transition-all ring-1 ring-white/20 hover:ring-indigo-500/50 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={scrollToExperience}
           >
             View Experience
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
